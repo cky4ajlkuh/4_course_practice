@@ -14,8 +14,7 @@ public class StartPage {
 
     public static List<SelectReq> view() throws SQLException {
         Statement statement = ApplicationDataSource.getConnection().createStatement();
-        ResultSet set = null;
-        set = statement.executeQuery("select * from student join textbook on student.id = textbook.student_id;");
+        ResultSet set = statement.executeQuery("select * from student join textbook on student.id = textbook.student_id;");
         return readSelect(set);
     }
 
